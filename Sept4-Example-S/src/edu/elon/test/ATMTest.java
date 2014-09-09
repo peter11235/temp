@@ -26,6 +26,13 @@ public class ATMTest {
 		double actual = atm.getBalance();
 		assertEquals(expected, actual, 0);
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testNegativeDeposit() {
+		atm.deposit(-1);
+		fail("Should have thrown exception");
+	}
+	
 
 	@Test
 	public void testGetBalance() {
